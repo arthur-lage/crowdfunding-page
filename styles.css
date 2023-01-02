@@ -305,6 +305,10 @@ main {
     font-size: 1.8rem;
     font-weight: 700;
   }
+
+  .actions .button__bookmark.bookmarked span {
+    color: var(--dark-cyan);
+  }
 }
 
 .project__status {
@@ -550,6 +554,10 @@ main {
   transform: translate(-50%, -50%);
 }
 
+.modal__choice button {
+  cursor: pointer;
+}
+
 .modal__choice .modal__header {
   display: flex;
   align-items: center;
@@ -564,6 +572,17 @@ main {
 .modal__choice .modal__header button {
   background: transparent;
   border: 0;
+}
+
+.pledge .pledge__header .info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pledge .pledge__header .green {
+  font-weight: 500;
+  color: var(--moderate-cyan);
 }
 
 .modal__choice > p {
@@ -605,6 +624,37 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.pledge .pledge__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pledge .pledge__header .radio__input {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  position: relative;
+}
+
+.pledge .pledge__header .radio__input .ball {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background: var(--moderate-cyan);
+  opacity: 0;
+  transition: 0.15s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pledge.selected .pledge__header .radio__input .ball {
+  opacity: 1;
 }
 
 .pledge.selected .price {
@@ -716,7 +766,7 @@ main {
   pointer-events: none;
 }
 
-.pledge label {
+.pledge .info span {
   font-size: 1.4rem;
   font-weight: 700;
   margin-left: 1rem;
